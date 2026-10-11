@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere | Online Shopping</title>
+    <meta
+        name="description"
+        content="Shop electronics, fashion and accessories at ShopSphere."
+    >
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+
+    <div class="announcement">
+        ✨ Special Offer: Use SHOP10 for 10% OFF your purchase!
+    </div>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Shop<span>Sphere</span>
+        </a>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                aria-label="Search products"
+            >
+
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                class="icon-button"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+                title="Toggle theme"
+            >
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button
+                class="icon-button coins-button"
+                id="coinsButton"
+                aria-label="My Coins"
+                title="My Coins"
+            >
+                <i class="fa-solid fa-coins"></i>
+                <span id="coinsCount">0</span>
+            </button>
+
+            <button
+                class="icon-button wishlist-header"
+                id="wishlistButton"
+                aria-label="Show wishlist"
+                title="Wishlist"
+            >
+                <i class="fa-regular fa-heart"></i>
+                <span id="wishlistCount">0</span>
+            </button>
+
+            <button
+                class="login-button"
+                id="loginButton"
+            >
+                <i class="fa-solid fa-user"></i>
+                <span id="loginButtonText">Login</span>
+            </button>
+
+            <button
+                class="cart-header"
+                id="openCartButton"
+                aria-label="Open shopping cart"
+            >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- Navigation -->
+
+    <nav class="navigation">
+        <a href="#home">Home</a>
+        <a href="#products">All Products</a>
+        <a href="#products" data-category-link="Electronics">Electronics</a>
+        <a href="#products" data-category-link="Fashion">Fashion</a>
+        <a href="#products" data-category-link="Accessories">Accessories</a>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                YOUR EVERYDAY SHOPPING DESTINATION
+            </span>
+
+            <h1>
+                Find Your Next<br>
+                <span>Favourite Thing.</span>
+            </h1>
+
+            <p>
+                Discover quality products, amazing deals,
+                and a shopping experience designed around you.
+            </p>
+
+            <a href="#products" class="primary-button">
+                Explore Products
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="hero-benefits">
+
+                <div>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span>Fast Delivery</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Shopping</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Easy Returns Policy</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="hero-circle">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <div class="floating-card floating-card-one">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <strong>4.8/5</strong>
+                    <small>Customer rating</small>
+                </div>
+            </div>
+
+            <div class="floating-card floating-card-two">
+                <i class="fa-solid fa-tags"></i>
+                <div>
+                    <strong>Great Deals</strong>
+                    <small>Everyday shopping</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Trust Information -->
+
+    <section class="trust-bar">
+
+        <div>
+            <i class="fa-solid fa-truck"></i>
+            <span>Convenient Delivery</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-lock"></i>
+            <span>Secure Experience</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-headset"></i>
+            <span>Customer Support</span>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-tags"></i>
+            <span>Special Offers</span>
+        </div>
+
+    </section>
+
+    <!-- Main Products -->
+
+    <main class="main-content" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">OUR COLLECTION</span>
+                <h2>Explore Products</h2>
+                <p>Find products that match your lifestyle.</p>
+            </div>
+
+            <div class="sort-control">
+                <label for="sortSelect">Sort by:</label>
+
+                <select id="sortSelect">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="name">Name: A–Z</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Category Filters -->
+
+        <div class="category-filters" id="categoryFilters">
+
+            <button class="category-btn active" data-category="All">
+                All Products
+            </button>
+
+            <button class="category-btn" data-category="Electronics">
+                Electronics
+            </button>
+
+            <button class="category-btn" data-category="Fashion">
+                Fashion
+            </button>
+
+            <button class="category-btn" data-category="Accessories">
+                Accessories
+            </button>
+
+            <button class="category-btn" data-category="Home">
+                Home & Living
+            </button>
+
+        </div>
+
+        <!-- Product Grid -->
+
+        <section class="product-grid" id="productGrid">
+            <!-- Products are generated by JavaScript -->
+        </section>
+
+        <div class="empty-state hidden" id="emptyProducts">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>No products found</h3>
+            <p>Try another search or category.</p>
+
+            <button class="primary-button" id="resetProducts">
+                Show All Products
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Shopping Cart Drawer -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+        aria-label="Shopping cart"
+        aria-hidden="true"
+        inert
+    >
+
+        <div class="cart-heading">
+
+            <div>
+                <h2>Your Shopping Cart</h2>
+                <p id="cartSubtitle">0 items in your cart</p>
+            </div>
+
+            <button
+                class="close-button"
+                id="closeCartButton"
+                aria-label="Close cart"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items generated by JavaScript -->
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h3>Your cart is empty</h3>
+
+            <p>Discover something you will love.</p>
+
+            <button class="primary-button" id="continueShopping">
+                Continue Shopping
+            </button>
+
+        </div>
+
+        <div class="cart-summary" id="cartSummary">
+
+            <div class="coins-redeem-box" id="coinsRedeemBox">
+                <div class="coins-info">
+                    <i class="fa-solid fa-coins"></i>
+                    <span>You have <strong id="coinsAvailableInCart">0</strong> coins</span>
+                    <small>100 coins = ₹10 discount</small>
+                </div>
+                <button id="redeemCoinsButton" class="redeem-coins-btn">Redeem Coins</button>
+                <p id="coinsRedeemMessage"></p>
+            </div>
+
+            <div class="coupon-box">
+
+                <label for="couponInput">Coupon Code</label>
+
+                <div class="coupon-input">
+                    <input
+                        type="text"
+                        id="couponInput"
+                        placeholder="Enter coupon"
+                        autocomplete="off"
+                    >
+
+                    <button id="applyCouponButton">Apply</button>
+                </div>
+
+                <p id="couponMessage" aria-live="polite"></p>
+
+                <small>Try SHOP10 or SAVE200.</small>
+
+            </div>
+
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="subtotalAmount">₹0.00</span>
+            </div>
+
+            <div class="summary-line discount-line">
+                <span>Discount</span>
+                <span id="discountAmount">−₹0.00</span>
+            </div>
+
+            <div class="summary-line">
+                <span>GST (18% demo rate)</span>
+                <span id="taxAmount">₹0.00</span>
+            </div>
+
+            <div class="summary-line">
+                <span>Delivery</span>
+                <span id="shippingAmount">₹0.00</span>
+            </div>
+
+            <div class="summary-line total-line">
+                <span>Total</span>
+                <span id="totalAmount">₹0.00</span>
+            </div>
+
+            <p class="shipping-note" id="shippingNote">
+                Add products to get started.
+            </p>
+
+            <button class="checkout-button" id="checkoutButton">
+                Proceed to Checkout
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="demo-note">
+                Demo checkout only. No real payment is collected.
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- Wishlist Drawer -->
+
+    <aside
+        class="wishlist-drawer"
+        id="wishlistDrawer"
+        aria-label="Wishlist"
+        aria-hidden="true"
+        inert
+    >
+
+        <div class="cart-heading">
+
+            <div>
+                <h2>My Wishlist</h2>
+                <p>Your favourite products</p>
+            </div>
+
+            <button
+                class="close-button"
+                id="closeWishlistButton"
+                aria-label="Close wishlist"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div id="wishlistItems" class="wishlist-items"></div>
+
+        <div id="wishlistEmpty" class="cart-empty">
+            <i class="fa-regular fa-heart"></i>
+            <h3>No favourites yet</h3>
+            <p>Save products you would like to buy later.</p>
+        </div>
+
+    </aside>
+
+    <!-- Login Modal -->
+
+    <div class="modal-overlay" id="loginModal">
+
+        <div class="checkout-modal login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+
+            <div class="modal-heading">
+                <div>
+                    <span class="section-label">WELCOME BACK</span>
+                    <h2 id="loginTitle">Login to ShopSphere</h2>
+                </div>
+                <button class="close-button" id="closeLoginButton" aria-label="Close login">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Step 1: Phone Number -->
+            <div id="loginStepPhone">
+                <p class="login-info">Enter your mobile number to receive an OTP</p>
+                <div class="form-group">
+                    <label for="loginPhone">Mobile Number</label>
+                    <div class="phone-input-wrap">
+                        <span class="country-code">+91</span>
+                        <input type="tel" id="loginPhone" placeholder="10-digit mobile number"
+                            inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" autocomplete="tel">
+                    </div>
+                </div>
+                <button class="checkout-button" id="sendOtpButton">
+                    Send OTP <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <!-- Step 2: OTP Entry -->
+            <div id="loginStepOtp" class="hidden">
+                <p class="login-info">Enter the 6-digit OTP sent to <strong id="otpSentTo"></strong></p>
+                <div class="otp-boxes" id="otpBoxes">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                </div>
+                <p id="otpDemoHint" class="demo-note otp-hint"></p>
+                <button class="checkout-button" id="verifyOtpButton">
+                    Verify OTP <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="resend-otp" id="resendOtpButton">
+                    <i class="fa-solid fa-rotate-right"></i> Resend OTP (<span id="otpTimer">30</span>s)
+                </button>
+                <button class="back-to-phone" id="backToPhoneButton">
+                    <i class="fa-solid fa-arrow-left"></i> Change Number
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Coins & Surprise Gift Modal -->
+
+    <div class="modal-overlay" id="rewardModal">
+
+        <div class="checkout-modal reward-modal" role="dialog" aria-modal="true">
+
+            <div class="modal-heading">
+                <div>
+                    <span class="section-label">CONGRATULATIONS! 🎉</span>
+                    <h2 id="rewardModalTitle">You Earned Rewards!</h2>
+                </div>
+                <button class="close-button" id="closeRewardModal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="reward-content" id="rewardContent">
+                <!-- filled by JS -->
+            </div>
+
+            <button class="checkout-button" id="claimRewardButton">
+                Awesome! Continue Shopping <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Checkout Modal -->
+
+
+    <div class="modal-overlay" id="checkoutModal">
+
+        <div
+            class="checkout-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="checkoutTitle"
+        >
+
+            <div class="modal-heading">
+
+                <div>
+                    <span class="section-label">ALMOST THERE</span>
+                    <h2 id="checkoutTitle">Complete Your Order</h2>
+                </div>
+
+                <button
+                    class="close-button"
+                    id="closeCheckoutButton"
+                    aria-label="Close checkout"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="checkout-total">
+                <span>Order Total</span>
+                <strong id="checkoutTotal">₹0.00</strong>
+            </div>
+
+            <form id="checkoutForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="customerName">Full Name</label>
+                        <input
+                            id="customerName"
+                            name="customerName"
+                            type="text"
+                            placeholder="Enter your full name"
+                            minlength="2"
+                            maxlength="100"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerEmail">Email Address</label>
+                        <input
+                            id="customerEmail"
+                            name="customerEmail"
+                            type="email"
+                            placeholder="you@example.com"
+                            maxlength="254"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="customerPhone">Phone Number</label>
+                        <input
+                            id="customerPhone"
+                            name="customerPhone"
+                            type="tel"
+                            placeholder="10-digit mobile number"
+                            inputmode="numeric"
+                            pattern="[6-9][0-9]{9}"
+                            title="Enter a valid 10-digit Indian mobile number."
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="customerAddress">Delivery Address</label>
+                        <textarea
+                            id="customerAddress"
+                            name="customerAddress"
+                            rows="3"
+                            placeholder="Enter your complete delivery address"
+                            maxlength="500"
+                            autocomplete="street-address"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="paymentMethod">Payment Method</label>
+
+                        <select id="paymentMethod" name="paymentMethod">
+                            <option value="COD">
+                                Cash on Delivery (Demo)
+                            </option>
+
+                            <option value="UPI">
+                                UPI (Demo Only)
+                            </option>
+
+                            <option value="Card">
+                                Card (Demo Only)
+                            </option>
+                        </select>
+
+                        <small>
+                            Payment options are simulated; no payment is processed.
+                        </small>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="checkout-button">
+                    Place Demo Order
+                    <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Order Success Modal -->
+
+    <div class="modal-overlay" id="successModal">
+
+        <div class="success-modal" role="dialog" aria-modal="true">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h2>Order Placed Successfully!</h2>
+
+            <p id="successMessage">
+                Your demo order has been created.
+            </p>
+
+            <div class="coins-earned-badge" id="coinsEarnedBadge" style="display:none">
+                <i class="fa-solid fa-coins"></i>
+                <span id="coinsEarnedText">You earned 0 coins!</span>
+            </div>
+
+            <button class="primary-button" id="finishOrderButton">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Toast Notifications -->
+
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Shop<span>Sphere</span>
+                </a>
+
+                <p>
+                    A smarter, simpler way to shop for
+                    your everyday essentials.
+                </p>
+
+                <div class="social-links">
+                    <a href="#home" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#home" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#home" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <a href="#products">All Products</a>
+                <a href="#products">Electronics</a>
+                <a href="#products">Fashion</a>
+                <a href="#products">Accessories</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Customer Care</h4>
+                <a href="#home">Help Centre</a>
+                <a href="#home">Shipping Information</a>
+                <a href="#home">Returns Policy</a>
+                <a href="#home">Contact Us</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Shopping Benefits</h4>
+                <p><i class="fa-solid fa-truck"></i> Convenient delivery</p>
+                <p><i class="fa-solid fa-tags"></i> Discount coupons</p>
+                <p><i class="fa-solid fa-heart"></i> Wishlist support</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ShopSphere. Academic project demonstration.</p>
+            <p>Built with HTML, CSS and JavaScript.</p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
